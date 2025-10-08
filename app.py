@@ -9,7 +9,9 @@ st.set_page_config(page_title="Small Dams Dashboard", layout="wide")
 st.title("🏞️ Small Dams – Daily Dashboard")
 
 # ---- Auto-refresh every 5 minutes (change or remove)
-st.autorefresh(interval=300_000, key="auto")
+from streamlit_autorefresh import st_autorefresh
+st_autorefresh(interval=300_000, key="auto")   # 5 minutes
+
 
 # ---- Load sheet
 @st.cache_data(ttl=300)  # 5min cache
